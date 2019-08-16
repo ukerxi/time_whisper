@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "惜时物语",
   "enablePullDownRefresh": false,
+  "onReachBottomDistance": 50,
   "disableScroll": false
 }

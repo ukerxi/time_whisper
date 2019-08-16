@@ -1,0 +1,103 @@
+/**index.wxss**/
+
+.wrap-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  min-height: 120px;
+  z-index: 1;
+}
+
+.wrap-img .img {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+.wrap-info {
+  position: relative;
+  padding: 40px 0 0 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.user-info {
+  position: relative;
+  padding: 0 0 20px 0;
+  margin: 0 20px;
+  text-align: center;
+   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: solid 1pt #ddd;
+}
+
+.user-info .img {
+  position: relative;
+  padding: 0;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.user-info .text-title {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: block;
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+}
+
+.user-info .text {
+  position: relative;
+  padding: 0;
+  margin: 5px 0;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #999;
+}
+
+.wrap-btn {
+  margin-top: 20px;
+}
+
+.wrap-btn .btn-item {
+  position: relative;
+  display: block;
+  padding: 0 0 0 30px;
+  margin: 0 0 20px 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: left;
+}
+.wrap-btn .btn-item .img{
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+   padding: 0;
+  margin: 0 10px 0 0;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}
+.wrap-btn .btn-item .text{
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+   padding: 3px 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 18px;
+}

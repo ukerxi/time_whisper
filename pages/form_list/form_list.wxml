@@ -1,0 +1,80 @@
+<!-- 日期安排 -->
+<view class="section view-tab-date">
+  <view class="item-tab" bindtap="preCheck">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_pre.png'}}"></image>
+    <view class="text">前一个</view>
+  </view>
+  <view class="item-active">
+    <picker bindchange="bindPickerChange" value="{{checkRelate.index}}" range-key="title" range="{{relateList}}">
+      <view class="text">{{checkRelate.data.title || '暂无'}}</view>
+    </picker>
+  </view>
+  <view class="item-tab next" bindtap="nextCheck">
+    <view class="text">后一个</view>
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_next.png'}}"></image>
+  </view>
+</view>
+<view class="section view-list" wx:if="{{isReady}}">
+  <view class="view-label" wx:if="{{itemList.length > 0}}">
+    <view class="item-label {{(item == activeLabel) ? 'active' : ''}}" data-id="{{item}}" bindtap="checkLabel" wx:for="{{labels}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+  <view class="view-range active-time" wx:if="{{itemListShow.length > 0}}">
+    <view class="view-wrap" wx:for="{{itemListShow}}" wx:key="{{item.id}}">
+      <view class="item-range" wx:if="{{item.isShow}}">
+        <view class="range-time">{{item.startTime}}</view>
+        <!-- 暂时不使用连线 -->
+        <!-- <view class="control-line" wx:if="{{index < (itemListShow.length -1)}}"></view> -->
+        <view class="control-dot"></view>
+        <view class="range-content">
+          <view class="title" data-id="{{item.id}}" bindtap="linkAddItem">{{item.title}}</view>
+          <view class="text red" wx:if="{{item.num}}" data-id="{{item.id}}" bindtap="linkAddItem">金额：{{item.num}}</view>
+          <view class="text" wx:if="{{item.content}}" data-id="{{item.id}}" bindtap="linkAddItem">备注：{{item.content}}</view>
+          <image wx:if="{{item.image}}" bindtap="previewImg" data-index="{{index}}" data-src="{{reqHost + item.image}}" mode="widthFix" class="img" src="{{reqHost + item.image}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="tips" wx:if="{{isLoadAll}}">暂无更多~</view>
+  </view>
+  <view class="section view-no-data" wx:if="{{itemList.length == 0}}">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/no_data.png'}}"></image>
+    <view class="text">空空如也喔~</view>
+  </view>
+</view>
+<view class="section view-add-range">
+  <image bindtap="controlMenu" mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_add.png'}}"></image>
+  <view class="view-add-menu" wx:if="{{isShowMenu}}">
+    <view class="item-menu" data-id="add_type" bindtap="checkMenu">
+      <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_add_new.png'}}"></image>
+      <view class="text">添加类型</view>
+    </view>
+    <view class="item-menu" data-id="add_item" bindtap="checkMenu">
+      <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_add_new.png'}}"></image>
+      <view class="text">添加项目</view>
+    </view>
+    <view class="item-menu" data-id="del" bindtap="checkMenu">
+      <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_delete.png'}}"></image>
+      <view class="text">删除当前</view>
+    </view>
+  </view>
+</view>
+<view class="view-modal {{isShowModal ? 'active':''}}">
+  <view class="masker" data-id="masker" bindtap="hideModal"></view>
+  <view class="content content-pop">
+    <view class="pop-top">
+      <view class="text">添加类型</view>
+      <view class="icon-close" data-id="close" bindtap="hideModal">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_gray_delete.png'}}"></image>
+      </view>
+    </view>
+    <view class="pop-content">
+      <view class="wrap-input">
+        <input class="input-text" value="{{formText}}" bindinput="formInput" placeholder="请输入标题" />
+      </view>
+    </view>
+    <view class="view-wrap">
+      <view class="wrap-btn" data-id="confirm" bindtap="hideModal">
+        <view class="btn-common-min">确定</view>
+      </view>
+    </view>
+  </view>
+</view>

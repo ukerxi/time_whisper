@@ -1,0 +1,230 @@
+/** 添加记录 **/
+.section {
+  overflow: hidden;
+}
+.view-input {
+  position: relative;
+  display: block;
+  margin: 10px;
+  padding: 0;
+}
+
+.view-input .label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.view-input .control {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 6px 10px 6px 50px;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.wrap-input {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  border: solid 1px #ddd;
+  border-radius: 6px;
+}
+.view-input .wrap-input .picker {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  min-height: 18px;
+}
+
+.view-input .item-inline {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}
+
+.view-input .input-text {
+  display: inline-block;
+  vertical-align: top;
+  color: #999;
+  line-height: 18px;
+  margin: 0;
+  padding: 4px 8px;
+}
+
+.view-input .input-area {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 100%;
+}
+
+.view-input .wrap-buttom {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.view-input .item-buttom {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  border: solid 1px #ddd;
+  border-radius: 6px;
+}
+
+.view-input .wrap-label {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+}
+
+.view-input .item-label {
+  position: relative;
+  display: block;
+  margin: 0 10px 6px 0;
+  padding: 2px 8px;
+  color: #039be5;
+  font-size: 12px;
+  line-height: 16px;
+  border: solid 1px #039be5;
+  border-radius: 6px;
+  background-color: #fff;
+  float: left;
+}
+.view-input .item-label.active {
+  color: #fff;
+  border: solid 1px #039be5;
+  background-color: #039be5;
+}
+
+.view-input .item-label-add {
+  position: relative;
+  display: block;
+  margin: 0 10px 0 0;
+  padding: 2px 0;
+  width: 22px;
+  height: 22px;
+  color: #039be5;
+  font-size: 12px;
+  line-height: 16px;
+  border: solid 1px #039be5;
+  border-radius: 50%;
+  background-color: #fff;
+  float: left;
+}
+.view-input .item-label-add::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 10px;
+  background-color: #039be5;
+}
+.view-input .item-label-add::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  height: 1px;
+  background-color: #039be5;
+}
+.wrap-img {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.wrap-img .item-img{
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 10px 10px 0 0;
+  float: left;
+}
+.wrap-img .item-img .img{
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  max-width: 120px;
+}
+.wrap-img .icon-close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-block;
+  padding: 0 0 0 10px;
+  margin: 0;
+  z-index: 10;
+}
+
+.wrap-img .icon-close .img {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  vertical-align: top;
+}
+.wrap-btn .btn-common-opt {
+  margin: 20px 60px 20px 60px;
+
+}
+.wrap-btn .btn-common-min.update {
+  color: #fff;
+  background-color: #039be5;
+  margin: 20px 10px 20px 10px;
+  padding: 8px 25px;
+}
+
+.wrap-btn .btn-common-min {
+  margin: 20px 10px 20px 10px;
+  padding: 8px 25px;
+}

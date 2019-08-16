@@ -1,0 +1,317 @@
+/**rang.wxss**/
+
+page {
+  background-color: #f0f0f4;
+}
+
+.view-tab-date {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+  border-top: solid 1pt #dcdcdc;
+  z-index: 100;
+}
+
+.view-tab-date .text {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #666;
+  height: 40px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.view-tab-date .item-active .text {
+  font-size: 17px;
+  color: #039be5;
+  max-width: 90%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.view-tab-date .item-tab {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  padding: 0 0 0 25px;
+  display: inline-block;
+  background-color: #fff;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.view-tab-date .item-tab.next {
+  padding: 0 25px 0 0;
+  right: 0;
+  left: auto;
+}
+
+.view-tab-date .item-tab .img {
+  display: inline-block;
+  width: 12px;
+  height: 16px;
+  margin: 12px 2px 0 0;
+  vertical-align: top;
+}
+
+.view-tab-date .item-tab.next .img {
+  margin: 12px 0 0 2px;
+}
+
+.view-tab-date .item-active {
+  position: relative;
+  padding: 0 81px 0 81px;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  z-index: 99;
+}
+
+.view-label {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 10px 10px 0 10px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.view-label .item-label {
+  position: relative;
+  display: block;
+  margin: 0 10px 5px 0;
+  padding: 2px 10px;
+  text-align: center;
+  float: left;
+  color: #039be5;
+  background-color: #fff;
+  border-radius: 6px;
+  line-height: 16px;
+  font-size: 12px;
+  border: solid 1px #039be5;
+}
+
+.view-label .item-label.active {
+  color: #fff;
+  background-color: #039be5;
+  border: solid 1px #039be5;
+}
+
+.view-list {
+  position: relative;
+  padding: 40px 0 20px 0;
+  margin: 0;
+  z-index: 99;
+  overflow: hidden;
+  background-color: #f0f0f4;
+  -webkit-overflow-scrolling: touch;
+}
+
+.view-list .tips {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin: 15px 0 15px 0;
+}
+
+.view-range {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 15px 0 0 0;
+}
+
+.view-range .item-range {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0 15px 0;
+  text-align: left;
+}
+
+.view-range .range-time {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  display: inline-block;
+  margin: 0;
+  padding: 6px 10px;
+  text-align: center;
+  overflow: hidden;
+  color: #666;
+  line-height: 18px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+
+.view-range.active-time .range-time {
+  padding: 6px 5px;
+  width: 80px;
+}
+
+.view-range .range-content {
+  position: relative;
+  display: block;
+  margin: 0 10px 0 100px;
+  padding: 6px 10px;
+  text-align: left;
+  overflow: hidden;
+  background-color: #fff;
+  color: #666;
+  line-height: 18px;
+  border-radius: 6px;
+}
+
+.view-range.active-time .range-content {
+  margin: 0 10px 0 120px;
+}
+
+.view-range .range-content .title {
+  color: #333;
+  font-size: 14px;
+}
+
+.view-range .range-content .img {
+  margin: 4px 0 0 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.view-range .control-line {
+  position: absolute;
+  top: 15px;
+  left: 80px;
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ccc;
+}
+
+.view-range .control-dot {
+  position: absolute;
+  top: 12px;
+  left: 77px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #00973a;
+  border-radius: 4px;
+}
+
+.view-range.active-time .control-dot {
+  left: 102px;
+}
+
+.view-range.active-time .control-line {
+  left: 105px;
+}
+
+.view-add-range {
+  position: fixed;
+  bottom: 70px;
+  right: 0;
+  z-index: 100;
+  display: inline-block;
+  margin: 0;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.view-add-range .img {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+}
+
+.view-no-data {
+  position: relative;
+  margin: 0;
+  padding: 60px 0 0 0;
+  text-align: center;
+}
+
+.view-no-data .img {
+  display: inline-block;
+  width: 232px;
+  height: 142px;
+  vertical-align: top;
+}
+
+.view-no-data .text {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin: 15px 0 0 0;
+}
+
+.view-add-menu {
+  position: absolute;
+  top: -50%;
+  left: -100px;
+  display: block;
+  background-color: #fff;
+  padding: 4px 10px;
+  margin: 0;
+  border-radius: 6px;
+  border: solid 1pt #dcdcdc;
+}
+
+.view-add-menu .item-menu {
+  position: relative;
+  display: block;
+  padding: 6px 0;
+  margin: 0;
+}
+
+.view-add-menu .item-menu .img {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
+}
+
+.view-add-menu .item-menu .text {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0 0 0 6px;
+  vertical-align: top;
+  font-size: 14px;
+  color: #333;
+  line-height: 18px;
+}
+.wrap-input {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 4px 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 18px;
+  border: solid 1px #ddd;
+  border-radius: 6px;
+}

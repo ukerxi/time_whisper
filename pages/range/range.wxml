@@ -1,0 +1,51 @@
+<!-- 日期安排 -->
+<view class="section view-tab-date">
+  <view class="item-tab" bindtap="preDate">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_pre.png'}}"></image>
+    <view class="text">前一天</view>
+  </view>
+  <view class="item-active">
+    <view class="text">{{dateStr}}</view>
+  </view>
+  <view class="item-tab next" bindtap="nextDate">
+    <view class="text">后一天</view>
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_next.png'}}"></image>
+  </view>
+</view>
+<view class="section view-list" wx:if="{{isReady}}">
+  <view class="view-label" wx:if="{{itemList.length > 0}}">
+    <view class="item-label {{(item == activeLabel) ? 'active' : ''}}" data-id="{{item}}" bindtap="checkLabel" wx:for="{{labels}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+  <view class="view-range" wx:if="{{itemListShow.length > 0}}">
+    <view class="view-wrap" wx:for="{{itemListShow}}" wx:key="{{item.id}}">
+      <view class="item-range" wx:if="{{item.isShow}}">
+        <view class="range-time">{{item.startTime}}</view>
+        <view class="control-line" wx:if="{{index < (itemListShow.length -1)}}"></view>
+        <view class="control-dot"></view>
+        <view class="range-content">
+          <view class="title" data-id="{{item.id}}" bindtap="linkAdd">{{item.title}}</view>
+          <view class="text" wx:if="{{item.content}}" data-id="{{item.id}}" bindtap="linkAdd">{{item.content}}</view>
+          <image wx:if="{{item.image}}" bindtap="previewImg" data-index="{{index}}"  data-src="{{reqHost + item.image}}" mode="widthFix" class="img" src="{{reqHost + item.image}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="tips" wx:if="{{isLoadAll}}">暂无更多~</view>
+  </view>
+   <view class="section view-no-data" wx:if="{{itemList.length == 0}}">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/no_data.png'}}"></image>
+    <view class="text">今天你还没有物语喔~</view>
+  </view>
+</view>
+<view class="section view-add-range" bindtap="linkAdd">
+  <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_add.png'}}"></image>
+</view>
+<view class="section view-tab">
+  <view class="item-tab active">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_range.png'}}"></image>
+    <view class="text">物语</view>
+  </view>
+  <view class="item-tab" bindtap="linkPage">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_user.png'}}"></image>
+    <view class="text">我的</view>
+  </view>
+</view>

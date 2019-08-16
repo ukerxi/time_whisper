@@ -1,0 +1,83 @@
+/**index.wxss**/
+
+.wrap-btn {
+  position: relative;
+  padding: 0;
+  margin: 30px 0 0 0;
+}
+
+.wrap-control {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.item-control {
+  position: relative;
+  padding: 8px 15px;
+  margin: 0 25px 10px 25px;
+  text-align: left;
+  border-bottom: solid 1pt #b6b6b6;
+  font-size: 16px;
+  line-height: 20px;
+  color: #222;
+}
+
+.control-input {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  line-height: 20px;
+  box-sizing: border-box;
+}
+
+.control-code {
+  padding-right: 100px;
+}
+
+.title {
+  position: relative;
+  padding: 0;
+  margin: 25px 25px 70px 25px;
+  text-align: left;
+  color: #222;
+  font-size: 22px;
+}
+
+.tips-label {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  display: inline-block;
+  padding: 8px 0;
+  margin: -18px 0 0 0;
+  font-size: 16px;
+  color: #ff4a39;
+  line-height:20px;
+}
+.tips-label.hide {
+  display: none;
+}
+.wrap-tips {
+  position: relative;
+  padding: 0;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+.wrap-tips .text{
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999999;
+  line-height: 20px;
+}
+.wrap-tips .text-phone{
+  color: #007aff;
+}

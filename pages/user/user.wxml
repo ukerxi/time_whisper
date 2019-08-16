@@ -1,0 +1,41 @@
+<!--用户中心页面-->
+<view class="section" wx:if="{{isReady}}">
+  <view class="wrap-img">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/bg_user.png'}}"></image>
+  </view>
+  <view class="wrap-info">
+    <view class="user-info">
+      <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/opt_icon_user.png'}}"></image>
+      <view class="text-title">{{userInfo.phone}}</view>
+      <view class="text">{{userInfo.name || userInfo.account}}</view>
+    </view>
+    <view class="wrap-btn">
+      <view class="btn-item">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/order.png'}}"></image>
+        <view class="text" bindtap="linkRelate">任务清单</view>
+      </view>
+      <view class="btn-item">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/calculator.png'}}"></image>
+        <view class="text" bindtap="linkRelate">物语报表</view>
+      </view>
+      <view class="btn-item">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/range_list.png'}}"></image>
+        <view class="text" data-id="finace" bindtap="linkRelate">财务账单</view>
+      </view>
+      <view class="btn-item">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/login.png'}}"></image>
+        <view class="text" bindtap="loginOut">退出登录</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="section view-tab">
+  <view class="item-tab" bindtap="linkPage">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_range.png'}}"></image>
+    <view class="text">物语</view>
+  </view>
+  <view class="item-tab active">
+    <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_user.png'}}"></image>
+    <view class="text">我的</view>
+  </view>
+</view>

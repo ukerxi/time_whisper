@@ -1,0 +1,19 @@
+<!--登录页面-->
+<view class="section border-top">
+<view class="title">手机号登录</view>
+  <view class="wrap-control">
+    <view class="item-control">
+      <input bindinput="inputPhone" class="control-input" type="number" placeholder="请输入手机号" />
+    </view>
+    <view class="item-control">
+      <input bindinput="inputCode" value="{{code}}" class="control-input control-code" type="number" placeholder="请输入验证码" />
+      <view bindtap="getCode" class="tips-label">{{tipsText}}</view>
+    </view>
+  </view>
+  <view class="wrap-btn">
+    <view class="btn-common btn-common-opt" bindtap="doLogin">登录</view>
+  </view>
+  <view class="wrap-tips">
+   <view class="text">请直接使用随机验证码进行验证登录</view>
+  </view>
+</view>

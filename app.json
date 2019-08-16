@@ -1,12 +1,38 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/range/range",
+    "pages/add_range/add_range",
+    "pages/user/user",
+    "pages/add_form/add_form",
+    "pages/add_form_item/add_form_item",
+    "pages/form_list/form_list"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#039be5",
     "navigationBarTitleText": "惜时物语",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  },
+  "debug": false,
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口数据上报"
+    }
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "1.0.6",
+      "provider": "wx5bc2ac602a747594"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [],
+  "sitemapLocation": "sitemap.json"
 }

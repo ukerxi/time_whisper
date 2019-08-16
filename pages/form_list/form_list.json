@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "清单列表",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "disableScroll": false
+}

@@ -1,0 +1,121 @@
+<!--用户中心页面-->
+<view class="section" wx:if="{{isReady}}">
+  <view class="view-input" wx:if="{{showItem.title}}">
+    <view class="label">标题：</view>
+    <view class="control">
+      <view class="wrap-input">
+        <textarea class="input-area" value="{{title}}" data-id="title" bindinput="inputArea" maxlength="-1" auto-height placeholder="请输入标题" />
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.num}}">
+    <view class="label">金额：</view>
+    <view class="control">
+      <view class="wrap-input">
+        <textarea class="input-area" value="{{num}}" data-id="num" bindinput="inputArea" maxlength="-1" auto-height placeholder="请输入金额" />
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.content}}">
+    <view class="label">备注：</view>
+    <view class="control">
+      <view class="wrap-input">
+        <textarea class="input-area" value="{{content}}" data-id="content" bindinput="inputArea" maxlength="-1" auto-height placeholder="请输入内容" />
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.startTime}}">
+    <view class="label">时间：</view>
+    <view class="control">
+      <view class="wrap-input item-inline">
+        <picker mode="date" value="{{startDate}}" data-id="start_date" bindchange="timeChange">
+          <view class="picker">
+            {{startDate || ''}}
+          </view>
+        </picker>
+      </view>
+      <view class="input-text">-</view>
+      <view class="wrap-input item-inline">
+        <picker mode="time" value="{{startTime}}" data-id="start_time" bindchange="timeChange">
+          <view class="picker">
+            {{startTime || ''}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.endTime}}">
+    <view class="label">终时：</view>
+    <view class="control">
+      <view class="wrap-input item-inline">
+        <picker mode="date" value="{{endDate}}" data-id="end_date" bindchange="timeChange">
+          <view class="picker">
+            {{endDate || ''}}
+          </view>
+        </picker>
+      </view>
+      <view class="input-text">-</view>
+      <view class="wrap-input item-inline">
+        <picker mode="time" value="{{endTime}}" data-id="end_time" bindchange="timeChange">
+          <view class="picker">
+            {{endTime || ''}}
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.img}}">
+    <view class="label">图片：</view>
+    <view class="control">
+      <view class="wrap-buttom" bindtap="uploadImg">
+        <view class="item-buttom">上传文件</view>
+      </view>
+      <view class="wrap-img" wx:if="{{images.length >0}}">
+        <view class="item-img" wx:for="{{images}}" wx:key="{{index}}">
+          <view class="icon-close" data-id="{{index}}" bindtap="delImg">
+            <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_gray_delete.png'}}"></image>
+          </view>
+          <image wx:if="{{!item.loaded}}" mode="widthFix" class="img" src="{{item.path}}"></image>
+          <image wx:if="{{item.loaded}}" mode="widthFix" class="img" src="{{srcHost + item.path}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="view-input" wx:if="{{showItem.label}}">
+    <view class="label">标签：</view>
+    <view class="control">
+      <view class="wrap-label">
+        <view wx:for="{{allLabels}}" wx:key="{{index}}" data-id="{{index}}" bindtap="checkLabel" class="item-label {{item.check ? 'active' : ''}}">{{item.name}}</view>
+        <view class="item-label-add" bindtap="showAddModal"></view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-btn" wx:if="{{!infoId}}">
+    <view class="btn-common btn-common-opt" data-type="add" bindtap="updateInfo">添加记录</view>
+  </view>
+  <view class="wrap-btn" wx:if="{{infoId}}">
+    <view class="btn-common btn-common-min" data-type="del" bindtap="updateInfo">删除记录</view>
+    <view class="btn-common btn-common-min update" data-type="update" bindtap="updateInfo">更新记录</view>
+  </view>
+</view>
+<view class="view-modal {{isShowModal ? 'active':''}}">
+  <view class="masker" data-id="masker" bindtap="hideModal"></view>
+  <view class="content content-pop">
+    <view class="pop-top">
+      <view class="text">添加标签</view>
+      <view class="icon-close" data-id="close" bindtap="hideModal">
+        <image mode="aspectFit" class="img" src="{{srcHost + '/images/time_whisper/icon_gray_delete.png'}}"></image>
+      </view>
+    </view>
+    <view class="pop-content">
+      <view class="wrap-input">
+        <input class="input-text" value="{{labelText}}" bindinput="labelInput" placeholder="请输入标签" />
+      </view>
+    </view>
+    <view class="view-wrap">
+      <view class="wrap-btn" data-id="confirm" bindtap="addLabel">
+        <view class="btn-common-min">确定</view>
+      </view>
+    </view>
+  </view>
+</view>
